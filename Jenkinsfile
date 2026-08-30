@@ -10,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                 sh 'pip3 install --break-system-packages -r requirements.txt'
+                sh '/var/lib/jenkins/.local/bin/pip3 install --break-system-packages -r requirements.txt'
             }
         }
 
