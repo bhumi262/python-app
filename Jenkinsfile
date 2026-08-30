@@ -22,13 +22,14 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'pytest'
+                sh 'python3 -m pytest'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'tar -czf python-app.tar.gz app.py requirements.txt test_app.py'
+                sh 'tar -czf python-app.tar.gz app.py requirements.txt test_app.py Jenkinsfile'
+                sh 'ls -lh python-app.tar.gz'
             }
         }
     }
